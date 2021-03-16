@@ -11,15 +11,14 @@ class Api::SessionsController < ApplicationController
             else
                 render json: ["Credentials Invalid"], status: :unprocessable_entity
             end
-        end
+    end
 
-        def destroy
-            if current_user
-                logout
-                render json: {}
-            else
-                render json: ["no current user"], status: :not_found
-            end
+    def destroy
+        if current_user
+            logout
+            render json: {}
+        else
+            render json: ["no current user"], status: :not_found
         end
     end
 end
