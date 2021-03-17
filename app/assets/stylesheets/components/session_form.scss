@@ -1,0 +1,102 @@
+
+.sessionFormPage{
+    display: flex;
+    flex-direction: column;
+    // width: 400px;
+    align-items: center;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: $light-gray;
+
+    h1 {
+        display: block;
+        font-family: 'acari_sansbold',Helvetica Neue,Helvetica,Segoe UI,Tahoma,Arial,sans-serif;
+        // font-weight: 700;
+        font-size: 38px;
+        line-height: 46px;
+        max-width: 700px;
+        text-align: center;
+        letter-spacing: -.75px;
+        margin-bottom: 13px;
+        color: $black;
+
+        +p {
+            margin-bottom: 20px;
+            color: $gray;
+        }
+    }
+    .sf-header {
+        padding: 48px 0px 40px;
+        display: flex;
+        width: 100%;
+        .logo {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            // width: 134px;
+            height: 35px;
+        }
+        .link {
+            margin-left: auto;
+            padding-right: 40px;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                padding-top:7px;
+                color: $blue;
+                margin-left: auto;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            p {
+                margin-left: auto;
+            }
+        }
+    }
+
+    button, input{
+        width: 400px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-weight: 900;
+        border-radius: 4px;
+    }
+    input {
+        box-sizing: border-box;
+        height: 35px;
+        padding: 3px, 16px;
+        margin-bottom: 13px;
+        color: $light-gray;
+        font-weight: 300;
+        padding-left: 20px;
+        border-color: $gray;
+        border-width: 1px;
+    }
+    button {
+        width: 400px;
+        background-color: $slack-purple;
+        color: white;
+        margin-top: 3px;
+        height: 35px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button:hover {
+        background-color: $hover-purple;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+.sessionForm label{
+    display: block
+}
+.star {
+    color: red;
+    font-size: 50%;
+    text-align: top;
+}

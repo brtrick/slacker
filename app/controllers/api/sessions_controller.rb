@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
 
     def destroy
         if current_user
-            logout
+            logout!
             render json: {}
         else
             render json: ["no current user"], status: :not_found
