@@ -89,7 +89,7 @@ export default class SessionForm extends React.Component {
         this.submit = true;
         this.processFrontendErrors("email", this.state.email);
         this.processFrontendErrors("password", this.state.password);
-        if (this.formType === "signup")
+        if (this.props.formType === "signup")
             this.processFrontendErrors("fullName", this.state.fullName);
         
         if (!this.emailError && !this.passwordError && !this.fullNameError) {
