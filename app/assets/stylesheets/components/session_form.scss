@@ -81,7 +81,10 @@
             list-style-image: url('exclamation-triangle-solid.svg');
             list-style-type: disc;
             position: absolute;
-            font-size: 18px;
+            font-size: 30px;
+            > span {
+                font-size: 18px;
+            }
             left: 50%;
             transform: translateX(-50%);
         }

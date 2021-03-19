@@ -1,6 +1,5 @@
 import React from "react";
 import {Link, Redirect} from "react-router-dom"
-import errors_reducer from "../reducers/errors_reducer";
 
 const emailValid = (email) => {
     return /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-][-a-zA-Z0-9!#$%&'*+/=?^_`{|}~.]*(?<!\.)@(?!\.)[-a-zA-Z0-9!#$%&'*+/=?^_`{|}~.]+(?:\.[a-zA-Z0-9-]+)+$/.test(email)
@@ -80,7 +79,7 @@ export default class SessionForm extends React.Component {
                     this.serverPasswordErrorMessage = error;
                     break;
                 default:
-                    this.serverErrorMessages.push(<li key={idx}>{error}</li>);
+                    this.serverErrorMessages.push(<li key={idx}><span>{error}</span></li>);
             }
         })
     }
@@ -117,10 +116,6 @@ export default class SessionForm extends React.Component {
             emailErrorMessage = this.state.emailErrorMessage;
             passwordErrorMessage = this.state.passwordErrorMessage;
         }
-         
-        // const serverErrorMessages = this.props.map(
-        //     (error, idx) => (<li key={idx}>{error}</li>)
-        // )
         
         return (
             <div className="session-form-page">
