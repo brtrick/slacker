@@ -29,6 +29,7 @@ export default class SessionForm extends React.Component {
         this.serverErrorMessages = [];
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginDemoUser = this.loginDemoUser.bind(this);
     }
 
     componentWillUnmount() {
@@ -104,6 +105,15 @@ export default class SessionForm extends React.Component {
         }
     }
 
+    loginDemoUser (e) {
+        e.preventDefault();
+        const user = {
+            email: "slacker@slacker.com",
+            password: "slacker"
+        };
+        this.props.processForm(user);
+    }
+
     render () {
         const formType = this.props.formType;
         let emailErrorMessage, passwordErrorMessage;
@@ -164,7 +174,10 @@ export default class SessionForm extends React.Component {
                             <p className={"feedback" + (this.passwordError ? " error" : "")}>{<img className="triangleWarning" src={triangleWarning}></img>} {passwordErrorMessage}</p>
                         </div>
                         <button onClick={this.handleSubmit}>{formType === "signup" ? "Sign Up" : "Sign In with Email"}</button>
-                    </div>
+                        {formType==="login" ? (
+                            <button id="demo" onClick={this.loginDemoUser}>Login as Slacker Demo</button>
+                        ) : ""}
+                        </div>
                 </form>
             </div>
         )
