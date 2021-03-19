@@ -1,10 +1,7 @@
 import React from "react";
 import {Link, Redirect} from "react-router-dom"
+import {emailValid} from "../util/regex_util"
 
-const emailValid = (email) => {
-    return /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-][-a-zA-Z0-9!#$%&'*+/=?^_`{|}~.]*(?<!\.)@(?!\.)[-a-zA-Z0-9!#$%&'*+/=?^_`{|}~.]+(?:\.[a-zA-Z0-9-]+)+$/.test(email)
-            && !/\.\./.test(email)
-}
 
 export default class SessionForm extends React.Component {
     constructor (props) {
