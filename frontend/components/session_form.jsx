@@ -130,7 +130,7 @@ export default class SessionForm extends React.Component {
         return (
             <div className="session-form-page">
                 <div className="session-form-header">
-                    <img className="logo" src={slackerRGBUrl}></img>
+                    <Link to='/'><img className="logo" src={slackerRGBUrl} /></Link>
                     <div className="nav-link">
                         {formType === "signup" ? 
                             <p>Already a Slacker?</p> :
@@ -173,9 +173,9 @@ export default class SessionForm extends React.Component {
                             <input className={"session-input" + (this.passwordError ? " error" : "")} type="password" onChange={this.handleChange('password')} value={this.state.password} placeholder={"Password" + (formType === "signup" ? " (must be at least 6 characters)" : "")}/>
                             <p className={"feedback" + (this.passwordError ? " error" : "")}>{<img className="triangleWarning" src={triangleWarning}></img>} {passwordErrorMessage}</p>
                         </div>
-                        <button onClick={this.handleSubmit}>{formType === "signup" ? "Sign Up" : "Sign In with Email"}</button>
+                        <button type="submit" onClick={this.handleSubmit}>{formType === "signup" ? "Sign Up" : "Sign In with Email"}</button>
                         {formType==="login" ? (
-                            <button id="demo" onClick={this.loginDemoUser}>Login as Slacker Demo</button>
+                            <button type="button" id="demo" onClick={this.loginDemoUser}>Login as Slacker Demo</button>
                         ) : ""}
                         </div>
                 </form>

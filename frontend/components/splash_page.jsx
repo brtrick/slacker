@@ -5,7 +5,7 @@ const SplashPage = () => {
     return (
         <div id="splash">
             <div className="splash-header">
-                <img className="logo" src={slackerRGBUrl}></img>
+                <Link to='/'><img className="logo" src={slackerRGBUrl} /></Link>
             </div>
             <div className="splash-body">
                 <h1>sometimes easier is just better</h1>

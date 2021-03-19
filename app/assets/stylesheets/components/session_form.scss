@@ -185,8 +185,14 @@
     
     #demo {
         background-color: $blue;
-        margin-top: 100px;
+        margin-top: 70px;
     }
+
+    #demo:hover {
+            background-color: $light-blue;
+            cursor: pointer;
+    }
+    
     .hidden {
         visibility: hidden;
     }
