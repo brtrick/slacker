@@ -4,7 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  name         :string           not null
-#  description  :text             not null
+#  description  :text
 #  workspace_id :bigint           not null
 #  private      :boolean          default(FALSE), not null
 #  dm           :boolean          default(FALSE), not null

@@ -20,6 +20,19 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password
 
+    has_many :subscriptions 
+
+    has_many :subscribed_channels,
+        through: :subscriptions,
+        source: :subscribable,
+        source_type: :Channel
+
+    has_many :subscribed_workspace,
+        through: :subscriptions,
+        source: :subscribable,
+        source_type: :Workspace
+
+
     def ensure_session_token 
         self.session_token ||= User.generate_session_token
     end

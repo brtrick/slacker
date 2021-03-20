@@ -10,22 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_201851) do
+ActiveRecord::Schema.define(version: 2021_03_20_203341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "channels", force: :cascade do |t|
     t.string "name", null: false
-    t.text "description", null: false
+    t.text "description"
     t.bigint "workspace_id", null: false
     t.boolean "private", default: false, null: false
     t.boolean "dm", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_channels_on_name", unique: true
     t.index ["workspace_id", "name"], name: "index_channels_on_workspace_id_and_name", unique: true
     t.index ["workspace_id"], name: "index_channels_on_workspace_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "subscriber_id", null: false
+    t.string "subscribable_type", null: false
+    t.bigint "subscribable_id", null: false
+    t.boolean "admin", default: false, null: false
+    t.boolean "pending", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscribable_type", "subscribable_id"], name: "index_subscriptions_on_subscribable_type_and_subscribable_id"
+    t.index ["subscriber_id", "subscribable_type", "subscribable_id"], name: "index_subscriptions_on_subscriber_subscriptions", unique: true
+    t.index ["subscriber_id"], name: "index_subscriptions_on_subscriber_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_03_19_201851) do
   end
 
   add_foreign_key "channels", "workspaces"
+  add_foreign_key "subscriptions", "users", column: "subscriber_id"
 end

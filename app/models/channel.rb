@@ -4,7 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  name         :string           not null
-#  description  :text             not null
+#  description  :text
 #  workspace_id :bigint           not null
 #  private      :boolean          default(FALSE), not null
 #  dm           :boolean          default(FALSE), not null
@@ -12,5 +12,15 @@
 #  updated_at   :datetime         not null
 #
 class Channel < ApplicationRecord
+  validates :name, :workspace_id, presence: true
+  validates :private, :dm, inclusion: {in: ["true", "false"]}
+  validates :name, uniqueness: {scope: :workspace_id}
+
   belongs_to :workspace
+
+  has_many :subscriptions as: :subscribable
+
+  has_many :subscribers,
+      through: :subscriptions,
+      source: :subscriber
 end
