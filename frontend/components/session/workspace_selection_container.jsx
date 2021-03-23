@@ -3,9 +3,10 @@ import { fetchWorkspaces, fetchWorkspace } from "../../actions/workspace_actions
 import { logout } from "../../actions/session_actions";
 import WorkspaceSelectionForm from "./workspace_selection_form";
 
-const mapSTP = ({ entities: {workspaces}, session}) => {
+const mapSTP = ({ entities: {workspaces}, entities: {users}, session}) => {
     
     return {
+        currentUser: users[session.currentUserId],
         workspaces: Object.values(workspaces),
         session: session
     }

@@ -1,5 +1,5 @@
 
-.session-form-page{
+.initial-form {
     display: flex;
     flex-direction: column;
     // width: 400px;
@@ -10,7 +10,7 @@
     font-size: 18px;
     color: $light-gray;
 
-    .session-form-header {
+    .initial-form-header {
         padding: 48px 0px 40px;
         display: flex;
         width: 100%;
@@ -42,9 +42,9 @@
         }
     }
     
-    .session-form-form {
-        position: relative;
-    }
+    .initial-form-body {
+        // position: relative;
+    // }
         h1 {
             width: 100%;
             display: flex;
@@ -199,3 +199,4 @@
     .hidden {
         visibility: hidden;
     }
+}

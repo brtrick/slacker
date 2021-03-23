@@ -24,14 +24,22 @@ export default class WorkspaceSelectionForm extends React.Component {
         const workspaceListItems = this.props.workspaces.map( (ws, idx) => {
             return <li key={idx} className="workspaceListItem" data-id={idx+1} onClick={this.handleClick}>{ws.name}</li>
         });
-
+        const userName = this.props.currentUser.displayName !== "" ? 
+                            this.props.currentUser.displayName :
+                            this.props.currentUser.fullName;
         return (
-            <div className="workspace-selection-form-page">
-                <div className="workspace-selection-form-header">
+            <div className="initial-form">
+                <div className="initial-form-header">
                     <Link to='/'><img className="logo" src={slackerRGBUrl} /></Link>
+                    <div className="nav-link">
+                        <p>Welcome {userName}!</p> 
+                        <Link to="/login" onClick={this.props.logout}>
+                            Switch user?
+                        </Link>
+                    </div>
                 </div>
 
-                <form className="workspace-selection-form-body">
+                <form className="initial-form-body">
                     <h1>Select your Workspace</h1>
                     <ul>
                         {workspaceListItems}

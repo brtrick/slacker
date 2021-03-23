@@ -30,7 +30,7 @@ export default class SessionForm extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.clearErrors();
+        this.props.clearSessionErrors();
     }
 
     handleChange (field) {
@@ -125,8 +125,8 @@ export default class SessionForm extends React.Component {
         }
         
         return (
-            <div className="session-form-page">
-                <div className="session-form-header">
+            <div className="initial-form">
+                <div className="initial-form-header">
                     <Link to='/'><img className="logo" src={slackerRGBUrl} /></Link>
                     <div className="nav-link">
                         {formType === "signup" ? 
@@ -139,7 +139,7 @@ export default class SessionForm extends React.Component {
                     </div>
                 </div>
                 
-                <form className="session-form-form">
+                <form className="initial-form-body">
                     <h1>{formType === "signup" ? "Sign Up" : "Sign in to Slacker"}</h1>
                     <p><span>We suggest using the <strong> email address you use at work.</strong></span></p>
 
