@@ -1,0 +1,11 @@
+.side-nav-bar {
+    background-color: $side-nav-purple;
+    position: fixed;
+    left: 0;
+    top: 38px;
+    width: 260px;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}

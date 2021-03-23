@@ -6,6 +6,7 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import HomeContainer from "./home_container";
 import WorkspaceSelectionContainer from "./session/workspace_selection_container";
+import Dashboard from "./dashboard/dashboard";
 
 const App = () => (
     <div>
@@ -18,8 +19,9 @@ const App = () => (
             <AuthRoute path="/signup" exact component={SignupFormContainer} />
             <Route path="/splash" exact component={SplashPage} />
             <ProtectedRoute path="/workspace" exact component={WorkspaceSelectionContainer} />
+            <ProtectedRoute path="/dashboard" exact component={Dashboard} />
             <ProtectedRoute path="/" exact component={HomeContainer} />
-            <Redirect to="/" />
+            <Redirect to="/dashboard" />
         </Switch>
     </div>
 );
