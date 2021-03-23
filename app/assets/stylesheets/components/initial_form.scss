@@ -199,4 +199,39 @@
     .hidden {
         visibility: hidden;
     }
+    .workspace-form-title {
+        margin-bottom: 20px;
+    }
+    .workspaceListItem {
+        margin-top: 30px;
+        border: 1px solid $gray-border;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 534px;
+        height: 75px;
+        display: inline-flex;
+        // justify-content: center;
+        align-items: center;
+        color: $black;
+        font-size: 20px;
+        p {
+            padding-left: 20px;
+        }
+        button {
+            height: 36px;
+            width: 55px;
+            padding: 0 12px 1px;
+            color: $black;
+            border: 1px solid $gray-border;
+            background-color: white;
+            font-size: 18px;
+            font-weight: 700;
+            margin-left: auto;
+            transform: none;
+            margin-right: 20px;
+        }
+        button:hover {
+            background-color: $lightest-gray;
+        }
+    }
 }
