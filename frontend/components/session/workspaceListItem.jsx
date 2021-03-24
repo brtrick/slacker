@@ -1,7 +1,6 @@
 import React from "react";
 
 export default ({workspace, clickFunction}) => {
-    console.log(workspace);
     return (
         <li className="workspaceListItem">
             <p>{workspace.name}</p>
@@ -11,5 +10,4 @@ export default ({workspace, clickFunction}) => {
             </button>
         </li>
     )
-
 }

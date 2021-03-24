@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (process.env.NODE_ENV !== "production") {
         window.store = store;
-        window.fetchWorkspace = APIUtil.fetchWorkspace
-        window.fetchWorkspaces = APIUtil.fetchWorkspaces
+        // window.fetchWorkspace = APIUtil.fetchWorkspace
+        // window.fetchWorkspaces = APIUtil.fetchWorkspaces
         window.logout = SessionAPIUtil.logout
-        window.loadWorkspace = WorkspaceAPIUtil.fetchWholeWorkspace
+        // window.loadWorkspace = WorkspaceAPIUtil.fetchWholeWorkspace
     }
 
 

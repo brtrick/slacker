@@ -20,7 +20,7 @@ const App = () => (
             <Route path="/splash" exact component={SplashPage} />
             <ProtectedRoute path="/workspace" exact component={WorkspaceSelectionContainer} />
             <ProtectedRoute path="/dashboard" exact component={Dashboard} />
-            <ProtectedRoute path="/" exact component={HomeContainer} />
+            {/* <ProtectedRoute path="/" exact component={HomeContainer} /> */}
             <Redirect to="/dashboard" />
         </Switch>
     </div>
