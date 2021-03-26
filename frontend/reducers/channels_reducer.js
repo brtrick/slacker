@@ -17,7 +17,7 @@ const channelsReducer = (state = defaultState, action) => {
         case RECEIVE_USER_WORKSPACE:
             return Object.assign({}, action.workspace.channels);
         case RECEIVE_CHANNEL:
-            return Object.assign({}, state, { [action.channel.id]: action.channel });
+            return Object.assign({}, state, action.channel.channel);
         case RECEIVE_WORKSPACE_CHANNELS:
             return Object.assign({}, state, action.channels);
         default:

@@ -3,9 +3,10 @@ import { withRouter } from "react-router-dom"
 
 import ChannelDisplay from "./channel_display"
 
-const mapSTP = ({ entities: { users } }) => {
+const mapSTP = ({ entities: { users, messages } }) => {
     return {
-        users: users
+        users: users,
+        messages: messages
     }
 }
 

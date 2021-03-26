@@ -2,6 +2,7 @@ import {
     RECEIVE_MESSAGE,
     RECEIVE_MESSAGES
 } from '../actions/channel_actions';
+import { RECEIVE_CHANNEL } from '../actions/channel_actions'
 import { RECEIVE_USER_WORKSPACE } from '../actions/workspace_actions'
 
 const defaultState = {};
@@ -9,6 +10,8 @@ const defaultState = {};
 const messagesReducer = (state = defaultState, action) => {
     Object.freeze(state);
     switch (action.type) {
+        case RECEIVE_CHANNEL:
+            return Object.assign({}, state, action.channel.messages);
         // case RECEIVE_USER_WORKSPACE:
         //     return Object.assign({}, action.workspace.channels);
         // case RECEIVE_MESSAGE:
