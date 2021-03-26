@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import {fetchWorkspaceChannels} from "../../actions/channel_actions"
 import {subscribeChannel, unsubscribeChannel} from "../../actions/subscription_actions"
+import {getFilteredChannels} from "../../reducers/selectors"
 import ChannelBrowser from "./channel_index";
 
 const mapSTP = (state) => {

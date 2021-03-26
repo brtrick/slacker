@@ -9,7 +9,6 @@ export const getFilteredChannels = ({entities: {channels}}, filter, value = true
 export const getFilteredChannelsObject = (channels, filter, value = true) => {
     let result = {};
     for (let id in channels) {
-        console.log(`${id}, ${channels[id][filter]}`)
         if (channels[id][filter] === value) {
             result[id] = channels[id];
         }
