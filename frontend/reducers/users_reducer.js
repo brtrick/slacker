@@ -10,7 +10,7 @@ const usersReducer = (state = defaultState, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CHANNEL:
-            return Object.assign({}, channel.users, state);
+            return Object.assign({}, action.channel.users, state);
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.user.id]: action.user })
         case RECEIVE_USER_WORKSPACE:

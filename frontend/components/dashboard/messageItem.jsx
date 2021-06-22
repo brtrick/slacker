@@ -11,3 +11,5 @@ const MessageItem = ({ message, author }) => {
         </li> 
     )
 }
+
+export default MessageItem;

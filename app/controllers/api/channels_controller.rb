@@ -1,3 +1,5 @@
+
+
 class Api::ChannelsController < ApplicationController
 
     def index
@@ -5,8 +7,9 @@ class Api::ChannelsController < ApplicationController
     end
 
     def show
-        id = params[:id]
-        @channel = channel.includes(:subscribers, :messages).find(id)
+        id = params[:id].to_i
+        # debugger
+        @channel = Channel.includes(:subscribers, :messages).find(id)
         # @subscriber_ids = User.joins(:subscribed_channels).where(channels: {id: 1})
         # @pending_ids = @subscriber_ids.merge(Subscription.pending).map{|ele| ele.id}
         # @subscriber_ids = @subscriber_ids.map{|ele| ele.id} - @pending_ids

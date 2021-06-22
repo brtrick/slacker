@@ -2,28 +2,30 @@ import React from "react";
 import MessageItem from "./messageItem"
 
 class ChannelDisplay extends React.Component {
-constructor (props) {
-    super(props);
-    // this.id = this.props.params["id"];
+    constructor (props) {
+        super(props);
+        // this.id = this.props.params["id"];
+    }
 
-}
+    componentDidMount() {
+        this.props.fetchChannel(this.props.match.params["id"])
+    }
 
-ComponentDidMount () {
-    this.props.fetchChannel(this.props.params["id"])
-}
+    render () {
+        const messages = this.props.messages; 
+        // const temp = Object.keys(messages).length;
+        if (Object.keys(messages).length === 0) {
+            return null;
+        }
+        const messageListItems = Object.values(messages).map ((message, idx) => {
+            return <MessageItem key={idx} message={message} author={this.props.users[message.authorId]}/>
+        })
 
-render () {
-    if (Object.keys(this.props.messages) === 0) return NULL;
-    const messages = this.props.messages //.sort((a, b) => b.createdAt - a.createdAt);
-    const messageListItems = messages.map ((message, idx) => {
-        return <MessageItem key={idx} message={message} author={this.props.users[message.authorId]}/>
-    })
-
-    return (
-        <div className = "displayItem">
-            <p> Hello! </p>
-        </div>
-    )
-}
+        return (
+            <div className = "messagesDisplay">
+                 {messageListItems}
+            </div>
+        )
+    }
 }
 export default ChannelDisplay;
