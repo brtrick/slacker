@@ -17,8 +17,8 @@ class ChannelDisplay extends React.Component {
         if (Object.keys(messages).length === 0) {
             return null;
         }
-        const messageListItems = Object.values(messages).map ((message, idx) => {
-            return <MessageItem key={idx} message={message} author={this.props.users[message.authorId]}/>
+        const messageListItems = Object.values(messages).map ((message) => {
+            return <MessageItem key={message.id} message={message} author={this.props.users[message.authorId]}/>
         })
 
         return (

@@ -7,7 +7,7 @@ const MessageItem = ({ message, author }) => {
         <li className="message">
             <p>{name}</p>
             <p>{message.createdAt}</p>
-            <p> {message.body}</p>
+            <p>{message.body}</p>
         </li> 
     )
 }
