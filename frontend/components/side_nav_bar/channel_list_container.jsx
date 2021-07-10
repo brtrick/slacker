@@ -17,7 +17,7 @@ const mapSTP = state => {
 
 const mapDTP = (dispatch) => {
     return {
-        fetchChannel: (channel_id, message_id) => dispatch(fetchChannelMessages(channel_id, message_id)),
+        fetchChannel: (channel_id) => dispatch(fetchChannel(channel_id)),
     }
 }
 
