@@ -43,7 +43,7 @@ export const fetchWorkspace = (workspace_id) => (dispatch) => {
 
 export const fetchUserWorkspace = (user_id, workspace_id) => (dispatch) => {
     return (
-        WorkspaceApiUtil.fetchUserWorkspace(workspace_id, user_id)
+        WorkspaceApiUtil.fetchUserWorkspace(user_id, workspace_id)
             .then((workspace) => dispatch(receiveUserWorkspace(workspace)),
                 errors => dispatch(receiveErrors(errors.responseJSON)))
     )
