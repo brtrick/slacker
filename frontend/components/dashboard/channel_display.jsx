@@ -22,7 +22,9 @@ class ChannelDisplay extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createMessage({body: this.state.msg, author_id: this.props.currentUserId, channel_id: this.props.channelId});
+        const message = this.state.msg;
+        this.props.createMessage({body: message, author_id: this.props.currentUserId, channel_id: this.props.channelId});
+        this.setState({msg: ""});
     }
     render () {
         const messages = this.props.messages; 
